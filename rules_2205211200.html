@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.diagram {
+    border: 1px solid black;
+    width: 20%;
+}
+</style>
+</head>
+<body style="font-family: arial;">
+
+<h1>ChessXp</h1>
+<h2>Classic Vibe. New Adventures.</h2>
+<h3>Claim</h3>
+What is described here, is not a chess variant. It's chess. The 10x10 version.
+<h3>Summary</h3>
+If you like Chess, but not necessarily its restriction to the default rnbqkbnr setup, this respectful innovation attempt might be what you are looking for. It describes a plausible set of rule adjustments that would make chess playable on a 10x10 board, while preserving the minimalist design concept of the original game.
+<br><br>
+First of all the raw specification for the impatient guys, followed by some notes regarding the concept.<br><br>
+<span style="color: green; font-size: 20; font-weight: bold;">Please check out <a href="https://chessxp.com" target="_blank">chessxp.com</a> for a software implementation.</span>
+
+<h3>Board</h3>
+The board is extended to 100 (10x10) squares. The files are labeled with the letters a-j, the ranks with the numbers 1-10. The lower right square of the board is black.
+<h3>Winger</h3>
+One new piece is introduced. The winger is basically a "big knight" and the logical next twin piece after bishop, knight and rook. While the knight reaches all squares that are part of the second circle around a given square and cannot be reached by rook or bishop, the winger has the same ability for the third circle. It would control the following fields if placed on the f6 square:
+<br><br>
+<img src="winger.png" class="diagram">
+<br><br>
+Like the knight, the winger can "jump over" all other pieces (of either color) to its destination square. 
+<br><br>
+The piece is complementary to bishop, knight and rook. Means, it covers only squares that are not covered by these pieces:
+<br><br>
+<img src="bnfrcomparison.png" class="diagram">
+<br><br>
+Each player starts with two wingers.
+<h3>Pawns</h3>
+The pawns are modified as follows:
+<br><br>
+They can move up to three steps forward when placed the initial square.
+<br><br>
+Up to two steps forward when placed on the third, fourth or fifth rank.
+<br><br>
+One step forward when placed on the sixth rank or higher.
+<br><br>
+This means a pawn can reach the promotion field within five moves, which is the same number of moves as in classical chess:
+<br><br>
+<img src="pawnmovement.png" class="diagram">
+<br><br>
+En passant capturing is possible each time a pawn passes an enemy pawn by moving more than one square forward in one move. The following example shows possible captures after the white pawn moved three squares forward:
+<br><br>
+<img src="ep1.png" class="diagram">
+<h3>Castling</h3>
+The castling rules are the same as in classical chess. King moves two squares towards the rook, rook jumps over. Thus, after 0-0 the king and rook are located on h1 and g1, after 0-0-0 on d1 and e1.
+<br><br>
+<img src="castling.png" class="diagram">
+<h3>Initial Setup</h3>
+The piece arrangement before move one is as follows:
+<br><br>
+<img src="setup.png" class="diagram">
+<h3>Notes</h3>
+ChessXp incorporates the following design elements of classical chess:<br><br>
+- Two single pieces: The key piece and the strongest piece. The latter has the same move pattern as the key piece but with unlimited range.
+<br><br>
+- Three (four) pairs of twin pieces that are complementary to each other.
+<br><br>
+- Pieces with ambiguous routes to their destination squares (knight, winger) can move directly to these squares regardless if one or all routes are blocked.
+<br><br>
+- Pawns get slower once they pass a certain rank number.
+<br><br>
+- All pieces can be developed by moving only the two central pawns.
+<br><br>
+- No unprotected pawns in the initial position.
+<br><br>
+Upvaluing the pawns by making them faster seemed necessary to keep the dynamic spirit of the original game that includes fast confrontation and a broad spectrum of possibilities for piece sacrifices.
+<br><br>
+The winger might be about as valuable as a rook (my own estimation).
+<h3>Idea</h3>
+Uli Schwekendiek<br>
+I live in Berlin<br>
+contact@chessxp.com<br>
+<br>
+2019-2021
+<h2>Setup Variants</h2>
+ChessXp features different kinds of start positions for a game.
+<h3>Placement</h3>
+In this mode, each player starts with eight pawns only, and the first eight moves are used to place the pieces behind them.
+<br><br>
+The following conditions must be met:
+<br><br>
+- The bishops must be placed on different square colors.
+<br><br>
+- The king must be placed between the rooks.
+<br><br>
+- As long as it's possible and the two conditions above are not violated, a piece can only be placed on a file where the opponent hasn't already placed a piece of the same type.
+<br><br>
+The castling rules are the same as in Chess960/Fischer-Random.
+<h3>Nest</h3>
+Razor sharp mode where the kings are always placed on the first and the last square of the board. The remaining white pieces are randomly placed on the first rank and mirrored for black in a point symmetric fashion.
+<br><br>
+No castling (obviously).
+<br><br>
+A winger can't make the first move.
+<br><br>
+For 8x8 you can watch lots of examples <a href="https://chess360.net">here</a>.
+<h3>Vintage</h3>
+The default setup.
+</html>
