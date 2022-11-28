@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.diagram {
+    border: 1px solid black;
+    width: 20%;
+}
+</style>
+</head>
+<body style="font-family: arial;">
+
+<h1>Skymate - Chess on a 10x10 Board</h1>
+<h2>Classic Vibe. New Adventures.</h2>
+
+What happens if the design principles of chess are applied to 10x10? Only three adjustments are needed: The next logical piece, an expanded start position and faster pawns. Will it work?
+
+<h3>Board</h3>
+The board is extended to 100 (10x10) squares. The files are labeled with the letters a-j, the ranks with the numbers 1-10. The lower right square of the board is black.
+<h3>Eagle</h3>
+One new piece is introduced. The eagle is basically a "big knight" and the logical next twin piece after bishop, knight and rook. Whilst the knight reaches all squares in a two square distance that cannot be reached by rook or bishop, the eagle has the same ability for the squares in a three square distance. It would control the following fields if placed on the f6 square:
+<br><br>
+<img src="winger.png" class="diagram">
+<br><br>
+Like the knight, the eagle can "jump over" all other pieces (of either color) to its destination square. 
+<br><br>
+The piece is complementary to bishop, knight and rook. Means, it covers only squares that are not covered by these pieces:
+<br><br>
+<img src="bnfrcomparison.png" class="diagram">
+<br><br>
+Each player starts with two eagles.
+<h3>Pawns</h3>
+The pawns are modified as follows:
+<br><br>
+They can move up to three steps forward when placed the initial square.
+<br><br>
+Up to two steps forward when placed on the third, fourth or fifth rank.
+<br><br>
+One step forward when placed on the sixth rank or higher.
+<br><br>
+This means a pawn can reach the promotion field within five moves, which is the same number of moves as in classical chess:
+<br><br>
+<img src="pawnmovement.png" class="diagram">
+<br><br>
+En passant capturing is possible each time a pawn passes an enemy pawn by moving more than one square forward in one move:
+<br><br>
+<img src="ep1.png" class="diagram">
+<h3>Castling</h3>
+The castling rules are the same as in classical chess. King moves two squares towards the rook, rook jumps over. Thus, after 0-0 the king and rook are located on h1 and g1, after 0-0-0 on d1 and e1.
+<br><br>
+<img src="castling.png" class="diagram">
+<h3>Initial Setup</h3>
+The piece arrangement before move one is as follows:
+<br><br>
+<img src="setup.png" class="diagram">
+<h3>Notes</h3>
+<h4>10x10 incorporates the following design elements of classical chess:</h4>
+- Two single pieces: The key piece and the strongest piece. The latter has the same move pattern as the key piece but with unlimited range.
+<br><br>
+- Three (four) pairs of twin pieces that are complementary to each other.
+<br><br>
+- Pieces with ambiguous routes to their destination squares (knight, eagle) can move directly to these squares regardless if one or all routes are blocked.
+<br><br>
+- Pawns get slower once they pass a certain rank number.
+<br><br>
+- All pieces can be developed by moving only the two central pawns.
+<br><br>
+- No unprotected pawns in the initial position.
+<br><br>
+- The game is played on a square board.
+<h4>Some estimations regarding the game dynamics:</h4>
+Upvaluing the pawns by making them faster seemed necessary to keep the dynamic spirit of the original game that includes fast confrontation and a broad spectrum of possibilities for piece sacrifices.
+<br><br>
+The start position provides maximum flexibility regarding the pawn structures that can arise in a game. Means, the pawn structure should be mainly be a choice of the players and not be dictated by the setup. The lesson from Chess960 is here that this flexibility is determined by the position of the bishops and the queen.
+<br><br>
+The eagle might be about as valuable as a rook (my own estimation).
+<br><br>
+10x10 should faciliate gambits and sacrifices in general, since one pawn unit represents a lower fraction of the complete material stock.
+<br><br>
+The knight obviously suffers from longer routes on the bigger board, but controls on average more squares than in classical chess.
+<br><br>
+The king might be the only piece that is less powerful on the bigger board.
+
+<h1>Modifying the Start Position</h2>
+
+Skymate offers possibilities to modify the setup of the pieces while leaving all other game rules untouched - except the castling rule which was introduced to fix some issues with the classic setup. This follows Fischers idea to get away from the overanalyzed rnbqkbnr setup, but keeping the spirit of the original game. He came up with Chess960 but there are other plausible concepts.
+
+<h2>Corner Kings</h2>
+
+The castling rule is replaced by the rule that the kings are always start on the first and the last square of the board. The remaining white pieces are randomly placed on the first rank and mirrored for black in a point symmetric fashion. This makes for a razor sharp mode that will expand your tactical skills nicely ;-)
+
+<h2>Piece Placement</h2>
+
+<h3>Vintage</h3>
+
+A plausible default setup.
+
+<h3>Placement</h3>
+Suggested by Bronstein and Benko. In this mode, each player starts with eight pawns only, and the first eight moves are used to place the pieces behind them.
+<br><br>
+The following conditions must be met:
+<br><br>
+- The bishops must be placed on different square colors.
+<br><br>
+- The king must be placed between the rooks.
+<br><br>
+- As long as it's possible and the two conditions above are not violated, a piece can only be placed on a file where the opponent hasn't already placed a piece of the same type.
+<br><br>
+The castling rules are the same as in Chess960/Fischer-Random.
+
+<h3>Random</h3>
+
+All pieces are placed randomly.
+<br><br>
+If combined with corner kings, an eagle can't make the first move, since for some setups white could immediately create a deadly mate threat.
+
+<br><br>
+------------------------------<br>
+By<br> 
+Uli S.<br>
+Berlin<br>
+contact@skymate.live<br>
+2019-2022
+</body>
+</html>
